@@ -12,19 +12,33 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::group(['namespace'=>'Dashbord','middleware'=>'auth:admin','prefix'=>'admin'],function(){
+Route::group(
+   [
+      'prefix' => LaravelLocalization::setLocale(),
+      'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+   ], function(){ 
 
-   Route::get('users',function(){
-       return 'in admin';
+      Route::group(['namespace'=>'Dashbord','middleware'=>'auth:admin','prefix'=>'admin'],function(){
+
+         Route::get('dashboard','DashboardController@index')->name('admin.dashboard');
+         Route::group(['prefix'=>'dashboard/settings'],function(){
+          Route::get('shipping-methods/{type}','SettingsController@editShippingMethods')->name('edite.shipping.method');
+          Route::put('shipping-methods/{id}','SettingsController@updateShippingMethods')->name('update.shipping.method');
+      
+      
+         });
+      
+      });
+      
+      
+      Route::group(['namespace'=>'Dashbord','prefix'=>'admin','middleware'=>'guest:admin'],function(){
+      Route::get('login','LoginController@getLogin')->name('admin.login');
+      Route::post('login','LoginController@postLogin')->name('admin.post.login');
+      
+      
+      });
+      Route::get('logout','Dashbord\LoginController@logout')->name('logout.admin');
+      
+
+
    });
-   Route::get('dashboard','DashboardController@index')->name('admin.dashboard');
-
-});
-
-
-Route::group(['namespace'=>'Dashbord','prefix'=>'admin','middleware'=>'guest:admin'],function(){
-Route::get('login','LoginController@getLogin')->name('admin.login');
-Route::post('login','LoginController@postLogin')->name('admin.post.login');
-Route::get('logout','LoginController@logout')->name('logout.admin');
-});
-

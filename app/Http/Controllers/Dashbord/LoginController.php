@@ -10,6 +10,7 @@ class LoginController extends Controller
     public function getLogin(){
         return view('Dashbord.auth.login');
     }
+    
     public function postLogin(AdminLoginRequest $request){
         $remember_me = $request->has('remember_me') ? true : false;
 
