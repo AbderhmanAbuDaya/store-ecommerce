@@ -12,13 +12,6 @@ return [
     | has failed, such as for an invalid token or invalid new password.
     |
     */
-
-    'settinges' => 'Settinges',
-    'Means of delivery' => 'Shipping Methods',
-    'free delivery'=>'Free Delivery',
-    'Local delivery'=>'Local Delivery',
-    'Outer delivery'=>'Outer Delivery',
-
-    
-
+   'shipping value'=>'الاسم مطلوب',
+   'shipping plain value'=>'لازم يكون رقم',
 ];

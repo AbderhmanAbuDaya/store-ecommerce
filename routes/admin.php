@@ -33,7 +33,7 @@ Route::group(
       
       Route::group(['namespace'=>'Dashbord','prefix'=>'admin','middleware'=>'guest:admin'],function(){
       Route::get('login','LoginController@getLogin')->name('admin.login');
-      Route::post('login','LoginController@postLogin')->name('admin.post.login');
+      Route::put('login','LoginController@postLogin')->name('admin.post.login');
       
       
       });

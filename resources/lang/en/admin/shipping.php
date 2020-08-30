@@ -13,11 +13,11 @@ return [
     |
     */
 
-    'settinges' => 'Settinges',
-    'Means of delivery' => 'Shipping Methods',
-    'free delivery'=>'Free Delivery',
-    'Local delivery'=>'Local Delivery',
-    'Outer delivery'=>'Outer Delivery',
+    'value delaviry' => 'Delivery value',
+    'name' => 'Name',
+    'back'=>'Back',
+    'save'=>'Save',
+    
 
     
 

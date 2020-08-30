@@ -45,7 +45,7 @@
                                 <div class="card-body">
                                 
                                         <form class="form" action="{{route('update.shipping.method',$shippingMethod ->id)}}"
-                                              method="PUT"
+                                              method="post"
                                               enctype="multipart/form-data">
                                             @csrf
                                             @method('PUT')
@@ -56,12 +56,12 @@
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> الاسم </label>
-                                                            <input type="text" value="{{$shippingMethod -> value  }}" id="name"
+                                                            <label for="projectinput1"> {{__('admin/shipping.name')}} </label>
+                                                            <input type="text" value="{{$shippingMethod ->value  }}" id="name"
                                                                    class="form-control"
                                                                    placeholder="  "
-                                                                   name="value">
-                                                            @error("value")
+                                                                   name="name">
+                                                            @error("name")
                                                             <span class="text-danger">{{$message}}</span>
                                                             @enderror
                                                         </div>
@@ -69,7 +69,7 @@
 
                                                          <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label for="projectinput1"> قيمه التوصيل </label>
+                                                                <label for="projectinput1"> {{__('admin/shipping.value delaviry')}}  </label>
                                                                 <input type="number" value="{{$shippingMethod -> plain_value}}" id="plain_value"
                                                                        class="form-control"
                                                                        placeholder="  "
@@ -79,6 +79,21 @@
                                                                 @enderror
                                                             </div>
                                                         </div>
+                                                        <div class="col-md-6">
+                                                        <div class="form-group mt-1">
+                                                            <input type="checkbox" value="1"
+                                                                   name="active"
+                                                                   id="switcheryColor4"
+                                                                   class="switchery" data-color="success"
+                                                                   {--@if($shippingMethod -> status == 1)checked @endif--}/>
+                                                            <label for="switcheryColor4"
+                                                                   class="card-title ml-1">الحالة </label>
+
+                                                            @error("active")
+                                                            <span class="text-danger"> </span>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
 
                                                  </div>
 
@@ -88,10 +103,10 @@
                                             <div class="form-actions">
                                                 <button type="button" class="btn btn-warning mr-1"
                                                         onclick="history.back();">
-                                                    <i class="ft-x"></i> تراجع
+                                                    <i class="ft-x"></i> {{__('admin/shipping.back')}} 
                                                 </button>
                                                 <button type="submit" class="btn btn-primary">
-                                                    <i class="la la-check-square-o"></i> حفظ
+                                                    <i class="la la-check-square-o"></i> {{__('admin/shipping.save')}} 
                                                 </button>
                                             </div>
                                         </form>

@@ -13,11 +13,11 @@ return [
     |
     */
 
-    'settinges' => 'Settinges',
-    'Means of delivery' => 'Shipping Methods',
-    'free delivery'=>'Free Delivery',
-    'Local delivery'=>'Local Delivery',
-    'Outer delivery'=>'Outer Delivery',
+    'value delaviry' => 'قيمة التوصيل',
+    'name' => 'الاسم',
+    'back'=>'رجوع',
+    'save'=>'حفظ',
+    
 
     
 
