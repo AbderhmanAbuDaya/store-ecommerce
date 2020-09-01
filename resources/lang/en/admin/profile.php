@@ -13,13 +13,15 @@ return [
     |
     */
 
-    'settinges' => 'Settinges',
-    'Means of delivery' => 'Shipping Methods',
-    'free delivery'=>'Free Delivery',
-    'Local delivery'=>'Local Delivery',
-    'Outer delivery'=>'Outer Delivery',
-    'logout'=>'logout',
-    'Languages'=>'Languages'
-    
+   'setting profile'=>'Edit profile',
+    'name'=>'Name',
+    'email'=>'Email',
+    'email required'=>'Must input email',
+    'setting password'=>'Change Password',
+    'setting last password'=>'The last password',
+    'setting new password'=>'New password',
+    'setting confirm new password'=>'Confirm the new password',
+
+
 
 ];

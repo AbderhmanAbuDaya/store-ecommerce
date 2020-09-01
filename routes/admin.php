@@ -16,7 +16,7 @@ Route::group(
    [
       'prefix' => LaravelLocalization::setLocale(),
       'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
-   ], function(){ 
+   ], function(){
 
       Route::group(['namespace'=>'Dashbord','middleware'=>'auth:admin','prefix'=>'admin'],function(){
 
@@ -24,21 +24,29 @@ Route::group(
          Route::group(['prefix'=>'dashboard/settings'],function(){
           Route::get('shipping-methods/{type}','SettingsController@editShippingMethods')->name('edite.shipping.method');
           Route::put('shipping-methods/{id}','SettingsController@updateShippingMethods')->name('update.shipping.method');
-      
-      
+
          });
-      
+
+          Route::group(['prefix'=>'dashboard/profile'],function(){
+              Route::get('edite','ProfileController@editProfile')->name('edite.profile');
+              Route::put('update','ProfileController@updateProfile')->name('update.profile');
+              Route::put('update/password','ProfileController@updateProfilePassword')->name('update.profile.password');
+              Route::post('checkPassword','ProfileController@checkPassword')->name('check.password');
+
+
+          });
+
       });
-      
-      
+
+
       Route::group(['namespace'=>'Dashbord','prefix'=>'admin','middleware'=>'guest:admin'],function(){
       Route::get('login','LoginController@getLogin')->name('admin.login');
-      Route::put('login','LoginController@postLogin')->name('admin.post.login');
-      
-      
+      Route::post('login','LoginController@postLogin')->name('admin.post.login');
+
+
       });
       Route::get('logout','Dashbord\LoginController@logout')->name('logout.admin');
-      
+
 
 
    });

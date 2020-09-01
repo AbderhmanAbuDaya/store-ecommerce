@@ -9,6 +9,7 @@ use App\Http\Requests\ShippingRequest;
 use db;
 class SettingsController extends Controller
 {
+
     public function editShippingMethods($type){
         if($type=='free')
        $shippingMethod= Setting::where('key','free_shipping_label')->first();
@@ -26,14 +27,15 @@ class SettingsController extends Controller
             DB::beginTransaction();
             $shipping=Setting::find($id);
         $shipping->update(['plain_value'=>$request->plain_value]);
-                $shipping->value=$request->name;// حيروح يعدل ديفولت عندك 
+                $shipping->value=$request->name;// حيروح يعدل ديفولت عندك
         $shipping->save();
         DB::commit();
+
         return redirect()->back()->with(['success'=>'تم التعديل ربنجاح']);
         }catch(Exception $qq){
          DB::rollback();
          return redirect()->back()->with(['error'=>'هناك  خطا  ما']);
         }
-    
+
     }
 }

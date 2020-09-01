@@ -26,13 +26,8 @@ class LoginController extends Controller
     }
     public function logout(Request $request)
     {
-
-        Auth::guard('admin')->logout();
-
-        $request->session()->flush();
-
-        $request->session()->regenerate();
-
+     $gurad= auth('admin');
+     $gurad->logout();
         return redirect()->guest(route( 'admin.login' ));
     }
 }

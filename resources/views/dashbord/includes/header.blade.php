@@ -32,16 +32,33 @@
                         <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
                 <span class="mr-1">مرجبا
                   <span
-                      class="user-name text-bold-700">  Ahmed Emam</span>
+                      class="user-name text-bold-700">{{auth('admin')->user()->name}}</span>
                 </span>
                             <span class="avatar avatar-online">
-                  <img  style="height: 35px;" src="" alt="avatar"><i></i></span>
+                  <img  style="height: 35px;" src="{{asset('assets/admin/images/43551155_889340331266621_360156754643779584_n.jpg')}}" alt="avatar"><i></i></span>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href=""><i
-                                    class="ft-user"></i> تعديل الملف الشحصي </a>
+                        <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="{{route('edite.profile')}}"><i
+                                    class="ft-user"></i> {{__('admin/sidbar.settinges')}} </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{route('logout.admin')}}"><i class="ft-power"></i> تسجيل
-                                الخروج </a>
+                            <a class="dropdown-item" href="{{route('logout.admin')}}"><i class="ft-power"></i>
+                            {{__('admin/sidbar.logout')}} </a>
+                        </div>
+                    </li>
+                    <li class="dropdown dropdown-user nav-item">
+                        <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
+
+                  <span
+                      class="user-name text-bold-700">{{ LaravelLocalization::getCurrentLocaleName() }}</span>
+
+
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                        @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                        <a class="dropdown-item" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                        <span class="avatar avatar-online">
+                  <img  style="height: 20px;" src="{{asset('assets/admin/images/flags/'.$localeCode.'.png')}}" alt=""></span>  {{  $properties['native'] }}</a>
+                            <div class="dropdown-divider"></div>
+                            @endforeach
                         </div>
                     </li>
 

@@ -18,5 +18,7 @@ return [
     'free delivery'=>'توصيل مجاني ',
     'Local delivery'=>'توصيل محلي ',
     'Outer delivery'=>'توصيل خارجي ',
+    'logout'=>'تسجيل الخروج',
+    'Languages'=>'الغات'
 
 ];

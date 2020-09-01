@@ -52,7 +52,7 @@
     <!-- BEGIN Custom CSS-->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/'.getFolder().'/style-rtl.css')}}">
     <!-- END Custom CSS-->
-   
+
     @yield('style')
     <link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet">
     <style>
@@ -72,7 +72,7 @@
 <!-- ////////////////////////////////////////////////////////////////////////////-->
 @include('dashbord.includes.footer')
 
-
+@yield('scripts')
 
 <!-- BEGIN VENDOR JS-->
 <script src="{{asset('assets/admin/vendors/js/vendors.min.js')}}" type="text/javascript"></script>
