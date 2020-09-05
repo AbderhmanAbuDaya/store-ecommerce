@@ -39,7 +39,7 @@ Route::group(
 
              Route::get('/{type}','MainCategoriesController@index')->name('admin.mainCategories');
              Route::get('create/{type}','MainCategoriesController@create')->name('admin.mainCategories.create');
-             Route::post('store/{type}','MainCategoriesController@store')->name('admin.mainCategories.stroe');
+             Route::post('store','MainCategoriesController@store')->name('admin.mainCategories.stroe');
              Route::get('edit/{id}/{type}','MainCategoriesController@edit')->name('admin.mainCategories.edit');
              Route::post('update/{id}','MainCategoriesController@update')->name('admin.mainCategories.update');
              Route::post('delete','MainCategoriesController@delete')->name('admin.mainCategories.delete');
