@@ -11,11 +11,22 @@ class Category extends Model
 
     protected $with = ['translations'];
     protected $translatedAttributes = ['name'];//هاي للترجمة بحط الكولم الي بدو يترجم
-    protected $fillable = ['parent_id', 'slug', 'is_active'];
+    protected $fillable = ['parent_id', 'slug', 'is_active','id'];
     protected $hidden = ['translations'];
     protected $casts = [
         'is_active' => 'boolean' // هان بتعمل بتخل رجعلك true or false
     ];
     public $timestamps = true;
+
+    public function  scopeParent($query){
+        return $query->whereNull(['parent_id']);
+    }
+    public function  scopeSub($query){
+        return $query->whereNotNull(['parent_id']);
+    }
+
+    public function getIsActiveAttribute($val){
+        return $val==1?'active':'not active';
+    }
 
 }

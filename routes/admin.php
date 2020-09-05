@@ -35,6 +35,17 @@ Route::group(
 
 
           });
+          Route::group(['prefix'=>'dashboard/main_categories/'],function (){
+
+             Route::get('/{type}','MainCategoriesController@index')->name('admin.mainCategories');
+             Route::get('create/{type}','MainCategoriesController@create')->name('admin.mainCategories.create');
+             Route::post('store/{type}','MainCategoriesController@store')->name('admin.mainCategories.stroe');
+             Route::get('edit/{id}/{type}','MainCategoriesController@edit')->name('admin.mainCategories.edit');
+             Route::post('update/{id}','MainCategoriesController@update')->name('admin.mainCategories.update');
+             Route::post('delete','MainCategoriesController@delete')->name('admin.mainCategories.delete');
+             Route::post('changeStatus','MainCategoriesController@changeStatus')->name('admin.mainCategories.changeStatus');
+
+          });
 
       });
 

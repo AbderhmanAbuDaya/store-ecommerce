@@ -20,15 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8936bbca-bf42-473b-8cd8-508c406cea08" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/dashbord/profile/editProfile.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashbord/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashbord/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashbord/SettingsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashbord/SettingsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/ar/admin/sidbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ar/admin/sidbar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/admin/sidbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/admin/sidbar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashbord/includes/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashbord/includes/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Helpers/general.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Helpers/general.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashbord/includes/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashbord/includes/sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,6 +173,7 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\ecommerce\app\Http\Requests" />
+      <recent name="C:\wamp64\www\ecommerce\app\Http\" />
       <recent name="C:\wamp64\www\ecommerce\app\Http\Controllers\Dashbord" />
     </key>
   </component>
@@ -193,7 +192,10 @@
       <option name="presentableId" value="Default" />
       <updated>1598864564803</updated>
       <workItem from="1598864566682" duration="18453000" />
-      <workItem from="1598953135085" duration="10205000" />
+      <workItem from="1598953135085" duration="21157000" />
+      <workItem from="1599037453084" duration="16147000" />
+      <workItem from="1599307706326" duration="12533000" />
+      <workItem from="1599339972233" duration="5370000" />
     </task>
     <servers />
   </component>
@@ -221,10 +223,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1598955963528" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1598892341508">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1599127748289">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1598892341508" />
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1599127748289" />
     <state width="1323" height="163" key="GridCell.Tab.0.bottom" timestamp="1598892343408">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -241,13 +243,13 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="163" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1598892343408" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1598959512936">
+    <state x="339" y="162" key="run.anything.popup" timestamp="1599307710013">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1598959512936" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1598866660447">
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1599307710013" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1599315104680">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1598866660447" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1599315104680" />
   </component>
 </project>
