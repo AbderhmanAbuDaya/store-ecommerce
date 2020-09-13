@@ -21,7 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="8936bbca-bf42-473b-8cd8-508c406cea08" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/AdminLoginRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/AdminLoginRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/EditProfileRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/EditProfileRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/CategoryDatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/CategoryDatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashbord/includes/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashbord/includes/header.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,7 +193,11 @@
       <workItem from="1598953135085" duration="21157000" />
       <workItem from="1599037453084" duration="16147000" />
       <workItem from="1599307706326" duration="12533000" />
-      <workItem from="1599339972233" duration="6058000" />
+      <workItem from="1599339972233" duration="6484000" />
+      <workItem from="1599383634028" duration="1572000" />
+      <workItem from="1599496851859" duration="1600000" />
+      <workItem from="1599556317773" duration="43000" />
+      <workItem from="1599995274637" duration="1291000" />
     </task>
     <servers />
   </component>
@@ -218,10 +225,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1598955963528" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1599127748289">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1599556359966">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1599127748289" />
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1599556359966" />
     <state width="1323" height="163" key="GridCell.Tab.0.bottom" timestamp="1598892343408">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

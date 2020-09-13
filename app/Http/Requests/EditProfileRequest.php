@@ -27,7 +27,7 @@ class EditProfileRequest extends FormRequest
             'name'=>'required',
             'email'=>'required|email|unique:admins,email,'.$this->id,
             //هاي معناتها الايميل يكون يونيك ف جدول الادمن  عمود الايميل ماعدا اي ديه ده عشان اذا ضفت نفس الايميل ل نفس اليوزر يقبلو
-           'password'=>'nullable|confirmed|max:8|min:4'
+           'password'=>'nullable|confirmed|max:8|min:4|same:new_password'
 
         ];
     }

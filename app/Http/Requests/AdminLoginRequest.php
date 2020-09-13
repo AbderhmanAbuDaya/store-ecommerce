@@ -36,8 +36,6 @@ class AdminLoginRequest extends FormRequest
             'email.required'=>'ادخل الايميل ',
             'password.required'=> 'ادخل الباسورد',//trans()
             'email.email'=>'لازم يكون ايميل',
-          
-      
         ];
         
     }

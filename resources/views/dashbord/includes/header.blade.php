@@ -44,6 +44,7 @@
                             {{__('admin/sidbar.logout')}} </a>
                         </div>
                     </li>
+
                     <li class="dropdown dropdown-user nav-item">
                         <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
 
@@ -53,11 +54,13 @@
 
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
-                        @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                        <a class="dropdown-item" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                            @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                                <a class="dropdown-item" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
                         <span class="avatar avatar-online">
                   <img  style="height: 20px;" src="{{asset('assets/admin/images/flags/'.$localeCode.'.png')}}" alt=""></span>  {{  $properties['native'] }}</a>
-                            <div class="dropdown-divider"></div>
+                                @if($localeCode!='ar')
+                                    <div class="dropdown-divider"></div>
+                                @endif
                             @endforeach
                         </div>
                     </li>
