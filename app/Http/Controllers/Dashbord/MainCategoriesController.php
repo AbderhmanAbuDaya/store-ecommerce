@@ -17,7 +17,7 @@ class MainCategoriesController extends Controller
 
           $mainCategories=Category::parent()->paginate(PAGENIATE_COUNT)->makeVisible('translations');
           if($type=='sub')
-              $mainCategories=Category::sub()->paginate(PAGENIATE_COUNT)->makeVisible('translations');
+              $mainCategories=Category::sub()->with('mainCategory')->paginate(PAGENIATE_COUNT)->makeVisible('translations');
              return view('dashbord/mainCategories/index',compact(['mainCategories','type']));
     }
 

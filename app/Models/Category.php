@@ -24,6 +24,9 @@ class Category extends Model
     public function  scopeSub($query){
         return $query->whereNotNull(['parent_id']);
     }
+    public function  mainCategory(){
+        return $this->belongsTo(self::class,'parent_id','id');
+    }
 
     public function getIsActiveAttribute($val){
         return $val==1?'active':'not active';

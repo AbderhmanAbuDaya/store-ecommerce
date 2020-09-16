@@ -47,6 +47,19 @@ Route::group(
 
           });
 
+          Route::group(['prefix'=>'dashboard/brands/'],function (){
+
+              Route::get('/','brandsController@index')->name('admin.brands');
+              Route::get('create','brandsController@create')->name('admin.brands.create');
+              Route::post('store','brandsController@store')->name('admin.brands.stroe');
+              Route::get('edit/{id}','brandsController@edit')->name('admin.brands.edit');
+              Route::post('update/{id}','brandsController@update')->name('admin.brands.update');
+              Route::post('delete','brandsController@delete')->name('admin.brands.delete');
+              Route::post('changeStatus','brandsController@changeStatus')->name('admin.brands.changeStatus');
+
+          });
+
+
       });
 
 

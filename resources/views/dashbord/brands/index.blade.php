@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('title')
-    AllMainCategories
+    AllBrands
 @stop
 
 @section('content')
@@ -9,13 +9,13 @@
         <div class="content-wrapper">
             <div class="content-header row">
                 <div class="content-header-left col-md-6 col-12 mb-2">
-                    <h3 class="content-header-title"> الاقسام الرئيسية </h3>
+                    <h3 class="content-header-title"> المركات التجارية </h3>
                     <div class="row breadcrumbs-top">
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">الرئيسية</a>
                                 </li>
-                                <li class="breadcrumb-item active"> الاقسام الرئيسية
+                                <li class="breadcrumb-item active">  المركات التجارية
                                 </li>
                             </ol>
                         </div>
@@ -29,7 +29,7 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">جميع الاقسام الرئيسية </h4>
+                                    <h4 class="card-title">جميع  المركات التجارية  </h4>
                                     <a class="heading-elements-toggle"><i
                                             class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
@@ -54,46 +54,35 @@
                                                 <?php $i=0;?>
                                                 <th>count</th>
                                                 <th>الاسم </th>
-                                                <th>اسم برابط</th>
-                                                <th> صورة القسم</th>
+                                                <th>الصورة </th>
                                                 <th>الحالة</th>
-                                                 @if($type=='sub')
-                                                <th> القسم الرئيسي</th>
-                                                    @endif
                                                 <th>الإجراءات</th>
                                             </tr>
                                             </thead>
                                             <tbody>
 
-                                            @isset($mainCategories)
-                                                @foreach($mainCategories as $category)
-                                                    <tr class="row{{$category->id}}">
+                                            @isset($brands)
+                                                @foreach($brands as $brand)
+                                                    <tr class="row{{$brand->id}}">
                                                         <td>{{$i++}}</td>
-                                                        <td>{{$category -> name}}</td>
-                                                        <td>{{$category->slug}}</td>
-                                                        <td> <img style="width: 150px; height: 100px;" src=""></td>
-                                                        <td id="status{{$category->id}}">{{$category -> is_active}}</td>
-                                                        @if($type=='sub')
-                                                            @if($category->mainCategory!=null)
-                                                            <td>  {{$category->mainCategory->name}}</td>
-                                                            @else
-                                                                <td>#</td>
-                                                            @endif
-                                                        @endif
+                                                        <td>{{$brand -> name}}</td>
+                                                        <td> <img style="width: 150px; height: 100px;" src="{{asset('assets/images/brands/'.$brand->photo)}}"></td>
+                                                        <td id="status{{$brand->id}}">{{$brand -> is_active}}</td>
+
                                                         <td>
                                                             <div class="btn-group" role="group"
                                                                  aria-label="Basic example">
-                                                                <a href="{{route('admin.mainCategories.edit',[$category->id,$type])}}"
+                                                                <a href="{{route('admin.brands.edit',$brand->id)}}"
                                                                    class="btn btn-outline-primary  box-shadow-3 mr-1 mb-1">تعديل</a>
 
 
-                                                                <a href="" id="" id_category="{{$category->id}}"
+                                                                <a href="" id="" id_brand="{{$brand->id}}"
                                                                    class="btn btn-outline-danger  box-shadow-3 mr-1 mb-1 deleteButton">حذف</a>
 
 
-                                                                <a href="" id="button{{$category->id}}"   id_category="{{$category->id}}"
+                                                                <a href="" id="button{{$brand->id}}"   id_brand="{{$brand->id}}"
                                                                    class="btn btn-outline-warning btn-min-width box-shadow-3 mr-1 mb-1 changeButton">
-                                                                    @if($category -> is_active == 'not active')
+                                                                    @if($brand -> is_active == 'not active')
                                                                         تفعيل
                                                                     @else
                                                                         الغاء تفعيل
@@ -134,14 +123,14 @@
             $('.deleteButton').click(function(e){
             e.preventDefault();
 
-            var id= $(this).attr('id_category');
+            var id= $(this).attr('id_brand');
 
             $.ajax({
                 type: 'post',
-                url: "{{route('admin.mainCategories.delete')}}",
+                url: "{{route('admin.brands.delete')}}",
                 data:{
                     '_token':"{{csrf_token()}}",
-                    'id_category':id,
+                    'id_brand':id,
                 },
 
                 success: function(data) {
@@ -157,16 +146,14 @@
             $('.changeButton').click(function(e){
                 e.preventDefault();
 
-                var id= $(this).attr('id_category');
+                var id= $(this).attr('id_brand');
 
                 $.ajax({
                     type: 'post',
-                    url: "{{route('admin.mainCategories.changeStatus')}}",
+                    url: "{{route('admin.brands.changeStatus')}}",
                     data:{
                         '_token':"{{csrf_token()}}",
-                        'id_category':id,
-
-
+                        'id_brand':id,
                     },
 
                     success: function(data) {

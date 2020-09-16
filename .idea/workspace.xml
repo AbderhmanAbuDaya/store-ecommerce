@@ -20,11 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8936bbca-bf42-473b-8cd8-508c406cea08" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/dashbord/brands/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/dashbord/brands/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/dashbord/brands/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/AdminLoginRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/AdminLoginRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/EditProfileRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/EditProfileRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/CategoryDatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/CategoryDatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashbord/includes/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashbord/includes/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Helpers/general.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Helpers/general.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashbord/MainCategoriesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashbord/MainCategoriesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashbord/includes/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashbord/includes/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashbord/mainCategories/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashbord/mainCategories/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +160,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../courate" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -165,14 +171,16 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\ecommerce\resources\lang\en\admin" />
-      <recent name="C:\wamp64\www\ecommerce\resources\views\dashbord\profile" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\ecommerce\app\Http\Controllers\Dashbord" />
+      <recent name="C:\wamp64\www\ecommerce\app\Models" />
       <recent name="C:\wamp64\www\ecommerce\app\Http\Requests" />
       <recent name="C:\wamp64\www\ecommerce\app\Http\" />
-      <recent name="C:\wamp64\www\ecommerce\app\Http\Controllers\Dashbord" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\ecommerce\resources\views\dashbord" />
+      <recent name="C:\wamp64\www\ecommerce\resources\lang\en\admin" />
+      <recent name="C:\wamp64\www\ecommerce\resources\views\dashbord\profile" />
     </key>
   </component>
   <component name="RunManager">
@@ -197,7 +205,7 @@
       <workItem from="1599383634028" duration="1572000" />
       <workItem from="1599496851859" duration="1600000" />
       <workItem from="1599556317773" duration="43000" />
-      <workItem from="1599995274637" duration="1291000" />
+      <workItem from="1599995274637" duration="16042000" />
     </task>
     <servers />
   </component>
@@ -221,14 +229,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="390" y="7" key="#PHP/0.0.1366.728@0.0.1366.728" timestamp="1598866980706" />
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1598955963528">
+    <state x="474" y="139" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1599999459634">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1598955963528" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1599556359966">
+    <state x="474" y="139" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1599999459634" />
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600009939903">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1599556359966" />
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1600009939903" />
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1600033761300">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1600033761300" />
     <state width="1323" height="163" key="GridCell.Tab.0.bottom" timestamp="1598892343408">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -245,10 +257,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="163" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1598892343408" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1599307710013">
+    <state x="339" y="162" key="run.anything.popup" timestamp="1600006635038">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1599307710013" />
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1600006635038" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1599315104680">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
