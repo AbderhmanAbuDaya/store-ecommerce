@@ -32,4 +32,15 @@ class Category extends Model
         return $val==1?'active':'not active';
     }
 
+     public function scopeList($q,$id){
+        return $this->where('parent_id','like',$id);
+     }
+    public function products(){
+        return $this->belongsToMany('App\Models\Product','categories_products','categories_id','product_id','id','id');
+    }
+    public function scopeActive($query){
+        return $query->where('is_active',1);
+    }
+
+
 }

@@ -53,9 +53,33 @@ Route::group(
               Route::get('create','brandsController@create')->name('admin.brands.create');
               Route::post('store','brandsController@store')->name('admin.brands.stroe');
               Route::get('edit/{id}','brandsController@edit')->name('admin.brands.edit');
-              Route::post('update/{id}','brandsController@update')->name('admin.brands.update');
+              Route::post('update','brandsController@update')->name('admin.brands.update');
               Route::post('delete','brandsController@delete')->name('admin.brands.delete');
               Route::post('changeStatus','brandsController@changeStatus')->name('admin.brands.changeStatus');
+
+          });
+
+          Route::group(['prefix'=>'dashboard/tags/'],function (){
+
+              Route::get('/','TagController@index')->name('admin.tags');
+              Route::get('create','TagController@create')->name('admin.tags.create');
+              Route::post('store','TagController@store')->name('admin.tags.stroe');
+              Route::get('edit/{id}','TagController@edit')->name('admin.tags.edit');
+              Route::post('update','TagController@update')->name('admin.tags.update');
+              Route::post('delete','TagController@delete')->name('admin.tags.delete');
+
+          });
+          Route::group(['prefix'=>'dashboard/products/'],function (){
+
+              Route::get('','ProductController@index')->name('admin.products');
+              Route::get('general-information','ProductController@create')->name('admin.products.general.create');
+              Route::post('general-information','ProductController@store')->name('admin.products.general.store');
+              Route::get('create','ProductController@create')->name('admin.products.create');
+              Route::post('store','ProductController@store')->name('admin.products.stroe');
+              Route::get('edit/{id}','ProductController@edit')->name('admin.products.edit');
+              Route::post('update','ProductController@update')->name('admin.products.update');
+              Route::post('delete','ProductController@delete')->name('admin.products.delete');
+              Route::post('changeStatus','ProductController@changeStatus')->name('admin.products.changeStatus');
 
           });
 

@@ -11,9 +11,9 @@
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="">الرئيسية </a>
                                 </li>
-                                <li class="breadcrumb-item"><a href=""> الاقسام الرئيسية </a>
+                                <li class="breadcrumb-item"><a href="">  المركات التجارية </a>
                                 </li>
-                                <li class="breadcrumb-item active">إضافة قسم رئيسي
+                                <li class="breadcrumb-item active">إضافة ماركة تجارية
                                 </li>
                             </ol>
                         </div>
@@ -27,7 +27,7 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title" id="basic-layout-form"> إضافة قسم رئيسي </h4>
+                                    <h4 class="card-title" id="basic-layout-form"> إضافة ماركة تجارية </h4>
                                     <a class="heading-elements-toggle"><i
                                             class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
@@ -43,13 +43,12 @@
                                 @include('dashbord.includes.alerts.errors')
                                 <div class="card-content collapse show">
                                     <div class="card-body">
-                                        <form class="form" action="{{route('admin.mainCategories.stroe')}}"
+                                        <form class="form" action="{{route('admin.brands.stroe')}}"
                                               method="POST"
-                                              id="creatForm"
                                               enctype="multipart/form-data">
                                             @csrf
                                             <div class="form-group">
-                                                <label> صوره القسم </label>
+                                                <label> صورة الماركة </label>
                                                 <label id="projectinput7" class="file center-block">
                                                     <input type="file" id="file" name="photo">
                                                     <span class="file-custom"></span>
@@ -67,7 +66,7 @@
                                                         <div class="row">
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
-                                                                    <label for="projectinput1"> اسم القسم -  </label>
+                                                                    <label for="projectinput1"> اسم الماركة -  </label>
                                                                     <input type="text" value="{{ old('name') }}" id="name"
                                                                            class="form-control"
                                                                            placeholder="  "
@@ -81,65 +80,6 @@
                                                             </div>
 
 
-                                                            <div class="col-md-6 ">
-                                                                <div class="form-group">
-                                                                    <label for="projectinput1"> القسم بالارتباط </label>
-                                                                    <input type="text" id="abbr"
-                                                                           class="form-control"
-                                                                           placeholder="  "
-                                                                           value="{{old('slug')}}"
-                                                                           name="slug">
-                                                                    @error('slug')
-                                                                    <span class="text-danger">{{$message}}</span>
-                                                                    @enderror
-
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="col-md-6 ">
-                                                                <div class="row hidden listCategories">
-                                                                    <div class="col-md-12">
-                                                                <div class="form-group   ">
-                                                                    <label for="">  القسم الرئيسي </label>
-                                                                    <select class="form-control form-control-sm" name="parent_id">
-                                                                        <option value="{{null}}"></option>
-                                                                        @foreach($categories as $category)
-                                                                        <option value="{{$category->id}}">{{$category->name}}</option>
-                                                                        @endforeach
-                                                                    </select>
-                                                                    @error('mainCategory')
-                                                                    <span class="text-danger">{{$message}}</span>
-                                                                    @enderror
-
-                                                                </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="col-md-6 mt-3">
-                                                                <div class="row">
-
-                                                                    <div class="col-md-6">
-                                                                        <input id="radio_Categories"  type="radio" name="parentID" value="1">
-                                                                        <label for="">قسم رئيسي</label>
-
-                                                                    </div>
-
-
-                                                                    <div class="col-md-6">
-                                                                        <input type="radio" id="radio_subCategories" name="parentID" value="2">
-                                                                        <label for="">قسم فرعي</label>
-
-                                                                    </div>
-                                                                    @error('parentID')
-                                                                    <span class="text-danger">{{$message}}</span>
-                                                                    @enderror
-
-
-                                                                </div>
-
-
-                                                            </div>
 
                                                         </div>
                                                         <div class="row">
@@ -182,36 +122,4 @@
         </div>
     </div>
 
-@stop
-
-
-@section('script')
-
-
-    <script>
-       var $zz=$("input[name='parentID']");
-       $zz.on('change', function() {
-
-           if ($("input[name='parentID']:checked").val() == 1) {
-               var $listCategories = $('.listCategories');
-
-               $listCategories.addClass('hidden');
-           }
-
-
-      if($("input[name='parentID']:checked").val()==2) {
-          var $listCategories = $('.listCategories');
-          $listCategories.removeClass('hidden');
-
-
-      }
-
-
-       });
-
-
-    </script>
-
-
-
-    @stop
+@endsection

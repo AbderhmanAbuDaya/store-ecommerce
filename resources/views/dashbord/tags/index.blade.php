@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('title')
-    AllBrands
+    AllTags
 @stop
 
 @section('content')
@@ -9,13 +9,13 @@
         <div class="content-wrapper">
             <div class="content-header row">
                 <div class="content-header-left col-md-6 col-12 mb-2">
-                    <h3 class="content-header-title"> المركات التجارية </h3>
+                    <h3 class="content-header-title"> الاشارات </h3>
                     <div class="row breadcrumbs-top">
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">الرئيسية</a>
                                 </li>
-                                <li class="breadcrumb-item active">  المركات التجارية
+                                <li class="breadcrumb-item active">   الاشارات
                                 </li>
                             </ol>
                         </div>
@@ -29,7 +29,7 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">جميع  المركات التجارية  </h4>
+                                    <h4 class="card-title">جميع الاشارات   </h4>
                                     <a class="heading-elements-toggle"><i
                                             class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
@@ -54,48 +54,27 @@
                                                 <?php $i=0;?>
                                                 <th>count</th>
                                                 <th>الاسم </th>
-                                                <th>الصورة </th>
-                                                <th>الحالة</th>
+                                                <th>الاسم بالرابط</th>
                                                 <th>الإجراءات</th>
                                             </tr>
                                             </thead>
                                             <tbody>
 
-                                            @isset($brands)
-                                                @foreach($brands as $brand)
-                                                    <tr class="row{{$brand->id}}">
+                                            @isset($tags)
+                                                @foreach($tags as $tag)
+                                                    <tr class="row{{$tag->id}}">
                                                         <td>{{$i++}}</td>
-                                                        <td>{{$brand -> name}}</td>
-                                                        <td>
-                                                            <img style="width: 150px; height: 100px;" src="
-
-                                                   @if($brand->photo=='*//lorempixel/*')
-                                                                {{$brand->photo}}
-                                                            @else
-                                                  {{asset('assets/images/brands/'.$brand->photo)}}
-                                                                @endif
-                                                                "></td>
-                                                        <td id="status{{$brand->id}}">{{$brand -> is_active}}</td>
-
+                                                        <td>{{$tag -> name}}</td>
+                                                        <td>{{$tag->slug}}</td>
                                                         <td>
                                                             <div class="btn-group" role="group"
                                                                  aria-label="Basic example">
-                                                                <a href="{{route('admin.brands.edit',$brand->id)}}"
+                                                                <a href="{{route('admin.tags.edit',$tag->id)}}"
                                                                    class="btn btn-outline-primary  box-shadow-3 mr-1 mb-1">تعديل</a>
 
 
-                                                                <a href="" id="" id_brand="{{$brand->id}}"
+                                                                <a href="" id="" id_tag="{{$tag->id}}"
                                                                    class="btn btn-outline-danger  box-shadow-3 mr-1 mb-1 deleteButton">حذف</a>
-
-
-                                                                <a href="" id="button{{$brand->id}}"   id_brand="{{$brand->id}}"
-                                                                   class="btn btn-outline-warning btn-min-width box-shadow-3 mr-1 mb-1 changeButton">
-                                                                    @if($brand -> is_active == 'not active')
-                                                                        تفعيل
-                                                                    @else
-                                                                        الغاء تفعيل
-                                                                    @endif
-                                                                </a>
 
 
                                                             </div>
@@ -131,58 +110,26 @@
             $('.deleteButton').click(function(e){
             e.preventDefault();
 
-            var id= $(this).attr('id_brand');
+            var id= $(this).attr('id_tag');
 
             $.ajax({
                 type: 'post',
-                url: "{{route('admin.brands.delete')}}",
+                url: "{{route('admin.tags.delete')}}",
                 data:{
                     '_token':"{{csrf_token()}}",
-                    'id_brand':id,
+                    'id_tag':id,
                 },
 
                 success: function(data) {
                     if(data.status==true)
                         alert(data.success);
                     $('.row'+data.id).remove();
-                        document.getElementById('brandCount').innerText=data.count;
+                        document.getElementById('tagCount').innerText=data.count;
 
                 }
 
             });
         });
-
-            $('.changeButton').click(function(e){
-                e.preventDefault();
-
-                var id= $(this).attr('id_brand');
-
-                $.ajax({
-                    type: 'post',
-                    url: "{{route('admin.brands.changeStatus')}}",
-                    data:{
-                        '_token':"{{csrf_token()}}",
-                        'id_brand':id,
-                    },
-
-                    success: function(data) {
-                        if(data.status==true) {
-
-                            var a ='button'+id;
-                           var  msg=data.msg;
-                            document.getElementById(a).innerText=msg;
-                            var a ='status'+id;
-                            var  msgstatus=data.msgstatus;
-                            document.getElementById(a).innerText=msgstatus;
-
-                        }
-
-
-
-                    }
-
-                });
-            });
 
     </script>
 

@@ -14,7 +14,8 @@ class MainCategoriesController extends Controller
 
 
     public function index($type){
-
+         //return Category::list(7)->get();
+       // return Category::findOrFail(99);
           $mainCategories=Category::parent()->paginate(PAGENIATE_COUNT)->makeVisible('translations');
           if($type=='sub')
               $mainCategories=Category::sub()->with('mainCategory')->paginate(PAGENIATE_COUNT)->makeVisible('translations');
@@ -31,7 +32,7 @@ class MainCategoriesController extends Controller
                 return redirect()->route('admin.mainCategories')->with(['error' => 'هذا القسم غير موجود ']);
             else:
 
-                if ($category->delete()):
+                if ($category->delete()&&$category->deleteTranslations()):
                     return response()->json([
                         'status' => true,
                         'success' => 'تم الحذف',
@@ -129,7 +130,7 @@ class MainCategoriesController extends Controller
     }
 
     public function create($type=null){
-          $categories=Category::parent()->get()->makeVisible('translations');
+        $categories=Category::get()->makeVisible('translations');
 
         return view('dashbord.mainCategories.create',compact(['type','categories']));
     }
@@ -138,13 +139,15 @@ class MainCategoriesController extends Controller
     public function  store(MainCategotyRequest $request)
     {
         try {
-
+      //return $request;
             DB::beginTransaction();
           $category= Category::create($request->except('_token'));
          $category->name=$request->name;
           $category->save();
           DB::commit();
-
+          $request->type='sub';
+         if(is_null($category->parent_id))
+             $request->type="main";
                 return redirect()->route("admin.mainCategories.create",$request->type)->withInput($request->all())->with(['success' => 'تم اضافة القسم']);
 
 

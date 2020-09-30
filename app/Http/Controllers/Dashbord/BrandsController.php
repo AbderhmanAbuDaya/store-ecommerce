@@ -8,6 +8,7 @@ use App\Http\Requests\MainCategotyRequest;
 use App\Models\Brand;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use mysql_xdevapi\Exception;
 use DB;
 
@@ -27,13 +28,18 @@ class BrandsController extends Controller
             if (!$brand):
                 return redirect()->route('admin.brands')->with(['error' => 'هذا الماركة غير موجود ']);
             else:
+                $image_path ='assets/images/brands/'.$brand->photo;// Value is not URL but directory file path
+                if(File::exists($image_path)) {
+                    File::delete($image_path);
+                }
+            $brand->deleteTranslations();
 
                 if ($brand->delete()):
                     return response()->json([
                         'status' => true,
                         'success' => 'تم الحذف',
                         'id' => $request->id_brand,
-
+                        'count'=>Brand::count()
                     ]);
                 else:
                     return response()->json([
@@ -52,6 +58,51 @@ class BrandsController extends Controller
     }
 
 
+    public function edit($id){
+        $brand=Brand::find($id);
+        if(empty($brand)):
+            return redirect()->back()->with(['error'=>'الماركة غير موجود']);
+        endif;
+
+        return view ('dashbord/brands/edit',compact(['brand']));
+    }
+
+    public function update(BrandsRequest $request){
+        try {
+            $brand=Brand::find($request->id);
+            if(empty($brand)):
+                return redirect()->route('admin.brands')->with(['error'=>'الماركة مش موجود']);
+            else:
+                DB::beginTransaction();
+
+                $fileName="";
+                if($request->has('photo')){
+                    $fileName=uploadImage('brands',$request->photo);
+                    $image_path ='assets/images/brands/'.$brand->photo;// Value is not URL but directory file path
+                    if(File::exists($image_path)) {
+                        File::delete($image_path);
+                    }
+                    Brand::where('id',$request->id)->update([
+                        'photo'=>$fileName
+
+                    ]);
+                }
+                $brand->update($request->except(['_token','id','name','photo']));
+                $brand->name=$request->name;
+
+                if($brand->save()):
+                    DB::commit();
+
+                    return redirect()->back()->with(['success'=>'تم تعديل العرض']) ;
+                endif;
+
+            endif;
+
+        }catch (Exception $ex){
+            return redirect()->route('admin.mainCategories')->with(['error'=>'حاول مرة اخرى']);
+        }
+
+    }
 
 
     public  function changeStatus(Request  $request){
@@ -87,6 +138,7 @@ class BrandsController extends Controller
             DB::beginTransaction();
             $fileName="";
             if($request->has('photo')){
+
                 $fileName=uploadImage('brands',$request->photo);
             }
             $brand=Brand::create($request->except(['_token','photo']));
@@ -105,6 +157,7 @@ class BrandsController extends Controller
             return redirect()->route('admin.brands.create')->with(['error' => 'حاول مرة اخرى']);
 
     }
+
 
 
 
