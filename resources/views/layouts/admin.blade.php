@@ -49,6 +49,8 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/vendors/css/extensions/datedropper.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/vendors/css/extensions/timedropper.min.css')}}">
     <!-- END Page Level CSS-->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/vendors/css/file-uploaders/dropzone.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/plugins/file-uploaders/dropzone.css')}}">
     <!-- BEGIN Custom CSS-->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/'.getFolder().'/style-rtl.css')}}">
     <!-- END Custom CSS-->
@@ -72,7 +74,6 @@
 <!-- ////////////////////////////////////////////////////////////////////////////-->
 @include('dashbord.includes.footer')
 
-@yield('scripts')
 
 <!-- BEGIN VENDOR JS-->
 <script src="{{asset('assets/admin/vendors/js/vendors.min.js')}}" type="text/javascript"></script>
@@ -106,6 +107,8 @@
 <script src="{{asset('assets/admin/js/core/app.js')}}" type="text/javascript"></script>
 <script src="{{asset('assets/admin/js/scripts/customizer.js')}}" type="text/javascript"></script>
 <!-- END MODERN JS-->
+<script src="{{asset('assets/admin/vendors/js/extensions/dropzone.min.js')}}" type="text/javascript"></script>
+
 <!-- BEGIN PAGE LEVEL JS-->
 
 
@@ -118,6 +121,7 @@
 
 <script src="{{asset('assets/admin/js/scripts/modal/components-modal.js')}}" type="text/javascript"></script>
 <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 
 <script>
     window.onload = function () {
@@ -172,5 +176,7 @@
     }
 </script>
 @yield('script')
+
+@yield('scripts')
 </body>
 </html>

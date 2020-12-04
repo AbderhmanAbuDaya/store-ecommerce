@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,16 +73,66 @@ Route::group(
           Route::group(['prefix'=>'dashboard/products/'],function (){
 
               Route::get('','ProductController@index')->name('admin.products');
+              Route::post('changeStatus','ProductController@changeStatus')->name('admin.products.general.changeStatus');
+              Route::post('delete','ProductController@delete')->name('admin.products.delete');
+              Route::get('edit/{id}','ProductController@edit')->name('admin.products.price.edit');
+              Route::post('update','ProductController@update')->name('admin.products.update');
+
+              /*############################################################################*/
               Route::get('general-information','ProductController@create')->name('admin.products.general.create');
               Route::post('general-information','ProductController@store')->name('admin.products.general.store');
+              /*############################################################################*/
+              Route::post('storeHouse','ProductController@storeHouse')->name('admin.products.storeHouse');
+              /*###################################################################################*/
               Route::get('create','ProductController@create')->name('admin.products.create');
-              Route::post('store','ProductController@store')->name('admin.products.stroe');
-              Route::get('edit/{id}','ProductController@edit')->name('admin.products.edit');
-              Route::post('update','ProductController@update')->name('admin.products.update');
-              Route::post('delete','ProductController@delete')->name('admin.products.delete');
-              Route::post('changeStatus','ProductController@changeStatus')->name('admin.products.changeStatus');
+              Route::post('price','ProductController@priceStore')->name('admin.products.price.store');
+              /*###################################################################################*/
+              Route::post('images/folder','ProductController@addImagesInFolder')->name('admin.products.images');
+              Route::post('images/database','ProductController@addImagesInDatabase')->name('admin.products.images.database');
+              /*###################################################################################*/
+
+              Route::group(['prefix'=>'dashboard/attributes/'],function (){
+
+                  Route::get('/','AttributeController@index')->name('admin.products.attributes');
+                  Route::get('create','AttributeController@create')->name('admin.products.attributes.create');
+                  Route::post('store','AttributeController@store')->name('admin.products.attributes.stroe');
+                  Route::get('edit/{id}','AttributeController@edit')->name('admin.products.attributes.edit');
+                  Route::post('update','AttributeController@update')->name('admin.products.attributes.update');
+                  Route::post('delete','AttributeController@delete')->name('admin.products.attributes.delete');
+                  Route::post('changeStatus','AttributeController@changeStatus')->name('admin.products.attributes.changeStatus');
+
+              });
+              /*##################################################################################*/
+              /*###################################################################################*/
+
+              Route::group(['prefix'=>'dashboard/attributes/options'],function (){
+
+                  Route::get('/','OptionController@index')->name('admin.products.options');
+                  Route::get('create','OptionController@create')->name('admin.products.options.create');
+                  Route::post('store','OptionController@store')->name('admin.products.options.store');
+                  Route::get('edit/{id}','OptionController@edit')->name('admin.products.options.edit');
+                  Route::post('update','OptionController@update')->name('admin.products.options.update');
+                  Route::post('delete','OptionController@delete')->name('admin.products.options.delete');
+                  Route::post('changeStatus','OptionController@changeStatus')->name('admin.products.options.changeStatus');
+
+              });
+
+
+              /*##################################################################################*/
+              Route::get('general-information/{id}',function ($id){
+//                  return "aa";
+                  return redirect()->route('admin.products.general.create')->with(['howActive'=>$id]);
+              })->name('redirectRequest');
 
           });
+          /*##################################################################################*/
+          Route::group(['prefix'=>'sliders'],function (){
+              Route::get('/','SliderController@addImages')->name('admin.sliders.create');
+              Route::post('images','SliderController@saveSliderImages')->name('admin.sliders.images.store');
+              Route::post('images/database','SliderController@saveSliderImagesDB')->name('admin.sliders.images.store.db');
+          });
+          /*##################################################################################*/
+
 
 
       });
@@ -93,7 +144,7 @@ Route::group(
 
 
       });
-      Route::get('logout','Dashbord\LoginController@logout')->name('logout.admin');
+      Route::get('logout-admin','Dashbord\LoginController@logout')->name('logout.admin');
 
 
 

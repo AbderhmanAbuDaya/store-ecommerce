@@ -1505,7 +1505,7 @@ S2.define('select2/selection/single',[
       '<span class="select2-selection__rendered"></span>' +
       '<span class="select2-selection__arrow" role="presentation">' +
         '<b role="presentation"></b>' +
-      '</span>'
+        '</span>'
     );
 
     return $selection;

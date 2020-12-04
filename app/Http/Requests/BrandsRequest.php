@@ -28,7 +28,7 @@ class BrandsRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>'required|unique:brands_translations,name,'.$this->id_translation,
+            'name'=>'required|unique:brand_translations,name,'.$this->id_translation,
             'photo'=>'required_without:id|mimes:jpg,jpeg,png'
         ];
     }

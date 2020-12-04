@@ -21,8 +21,10 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/home';
+    public const HOME = '/';
+    public const VERIFY = '/verify';
     public const Admin='/admin/dashboard' ;
+    public const PROFILE='/profile' ;
     /**
      * Define your route model bindings, pattern filters, etc.
      *
@@ -64,7 +66,7 @@ class RouteServiceProvider extends ServiceProvider
             ->namespace($this->namespace)
             ->group(base_path('routes/web.php'));
     }
- 
+
 
     /**
      * Define the "api" routes for the application.

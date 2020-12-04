@@ -27,6 +27,9 @@ class Category extends Model
     public function  mainCategory(){
         return $this->belongsTo(self::class,'parent_id','id');
     }
+    public function  childrens(){
+        return $this->hasMany(self::class,'parent_id','id');
+    }
 
     public function getIsActiveAttribute($val){
         return $val==1?'active':'not active';

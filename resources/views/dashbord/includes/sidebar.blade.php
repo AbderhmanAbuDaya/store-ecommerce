@@ -13,7 +13,7 @@
                         class="badge badge badge-info badge-pill float-right mr-2"></span>
                 </a>
                 <ul class="menu-content">
-                    <li class="active"><a class="menu-item" href=""
+                    <li class=""><a class="menu-item" href=""
                                           data-i18n="nav.dash.ecommerce"> عرض الكل </a>
                     </li>
                     <li><a class="menu-item" href="" data-i18n="nav.dash.crypto">أضافة
@@ -29,7 +29,7 @@
                         class="badge badge badge-danger badge-pill float-right mr-2">{{\App\Models\Category::parent()->count()}}</span>
                 </a>
                 <ul class="menu-content">
-                    <li class="active"><a class="menu-item" href="{{route('admin.mainCategories','main')}}"
+                    <li class=""><a class="menu-item" href="{{route('admin.mainCategories','main')}}"
                                           data-i18n="nav.dash.ecommerce"> عرض الكل </a>
                     </li>
                     <li><a class="menu-item" href="{{route('admin.mainCategories.create','main')}}" data-i18n="nav.dash.crypto">أضافة
@@ -44,7 +44,7 @@
                         class="badge badge badge-danger badge-pill float-right mr-2">{{\App\Models\Category::sub()->count()}}</span>
                 </a>
                 <ul class="menu-content">
-                    <li class="active"><a class="menu-item" href="{{route('admin.mainCategories','sub')}}"
+                    <li class=""><a class="menu-item" href="{{route('admin.mainCategories','sub')}}"
                                           data-i18n="nav.dash.ecommerce"> عرض الكل </a>
                     </li>
                     <li><a class="menu-item" href="{{route('admin.mainCategories.create','sub')}}" data-i18n="nav.dash.crypto">أضافة
@@ -59,11 +59,42 @@
                         class="badge badge badge-danger badge-pill float-right mr-2">{{\App\Models\Product::count()}}</span>
                 </a>
                 <ul class="menu-content">
-                    <li class="active"><a class="menu-item" href=""
+                    <li class=""><a class="menu-item" href="{{route('admin.products')}}"
                                           data-i18n="nav.dash.ecommerce"> عرض الكل </a>
                     </li>
                     <li><a class="menu-item" href="{{route('admin.products.general.create')}}" data-i18n="nav.dash.crypto">أضافة
                               منتج جديد </a>
+                    </li>
+
+                </ul>
+            </li>
+            <li class="nav-item"><a href=""><i class="la la-group"></i>
+                    <span class="menu-title" data-i18n="nav.dash.main">خصائص المنتج</span>
+                    <span
+                     id="attributCount"    class="badge badge badge-danger badge-pill float-right mr-2">{{\App\Models\Attribute::count()}}</span>
+                </a>
+                <ul class="menu-content">
+                    <li class=""><a class="menu-item" href="{{route('admin.products.attributes')}}"
+                                    data-i18n="nav.dash.ecommerce"> عرض الكل </a>
+                    </li>
+
+                    <li><a class="menu-item" href="{{route('admin.products.attributes.create')}}" data-i18n="nav.dash.crypto">
+                            اضافة خصائص المنتج</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href=""><i class="la la-group"></i>
+                    <span class="menu-title" data-i18n="nav.dash.main">قيمة خصائص المنتج</span>
+                    <span
+                        id="attributCount"    class="badge badge badge-danger badge-pill float-right mr-2">{{\App\Models\Option::count()}}</span>
+                </a>
+                <ul class="menu-content">
+                    <li class=""><a class="menu-item" href="{{route('admin.products.options')}}"
+                                    data-i18n="nav.dash.ecommerce"> عرض الكل </a>
+                    </li>
+
+                    <li><a class="menu-item" href="{{route('admin.products.options.create')}}" data-i18n="nav.dash.crypto">
+                            اضافة قيم خصائص المنتج</a>
                     </li>
                 </ul>
             </li>
@@ -74,7 +105,7 @@
                      id="brandCount"   class="badge badge badge-success badge-pill float-right mr-2 brandCount">{{\App\Models\Brand::count()}}</span>
                 </a>
                 <ul class="menu-content">
-                    <li class="active"><a class="menu-item" href="{{route('admin.brands')}}"
+                    <li class=""><a class="menu-item" href="{{route('admin.brands')}}"
                                           data-i18n="nav.dash.ecommerce"> عرض الكل </a>
                     </li>
                     <li><a class="menu-item" href="{{route('admin.brands.create')}}" data-i18n="nav.dash.crypto">أضافة
@@ -89,7 +120,7 @@
                         class="badge badge badge-warning  badge-pill float-right mr-2">{{\App\Models\Tag::count()}}</span>
                 </a>
                 <ul class="menu-content">
-                    <li class="active"><a class="menu-item" href="{{route('admin.tags')}}"
+                    <li class=""><a class="menu-item" href="{{route('admin.tags')}}"
                                           data-i18n="nav.dash.ecommerce"> عرض الكل </a>
                     </li>
                     <li><a class="menu-item" href="{{route('admin.tags.create')}}" data-i18n="nav.dash.crypto">أضافة
@@ -103,7 +134,7 @@
                         class="badge badge badge-warning  badge-pill float-right mr-2"></span>
                 </a>
                 <ul class="menu-content">
-                    <li class="active"><a class="menu-item" href=""
+                    <li class=""><a class="menu-item" href=""
                                           data-i18n="nav.dash.ecommerce"> عرض الكل </a>
                     </li>
                     <li><a class="menu-item" href="" data-i18n="nav.dash.crypto">أضافة
@@ -120,7 +151,7 @@
                         class="badge badge badge-danger  badge-pill float-right mr-2">0</span>
                 </a>
                 <ul class="menu-content">
-                    <li class="active"><a class="menu-item" href=""
+                    <li class=""><a class="menu-item" href=""
                                           data-i18n="nav.dash.ecommerce"> تذاكر الطلاب </a>
                     </li>
                 </ul>
@@ -141,6 +172,15 @@
                                    data-i18n="nav.templates.vert.compact_menu"> {{__('admin/sidbar.Outer delivery')}}</a>
                             </li>
 
+
+                        </ul>
+                    </li>
+                    <li><a class="menu-item" href="#"
+                           data-i18n="nav.templates.vert.main"> {{__('admin/sidebar.main slider')}} </a>
+                        <ul class="menu-content">
+                            <li><a class="menu-item" href="{{route('admin.sliders.create')}}"
+                                   data-i18n="nav.templates.vert.classic_menu">صور الاسليدر </a>
+                            </li>
                         </ul>
                     </li>
 

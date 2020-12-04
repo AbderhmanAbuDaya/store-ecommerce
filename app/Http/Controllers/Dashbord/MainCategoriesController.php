@@ -148,7 +148,7 @@ class MainCategoriesController extends Controller
           $request->type='sub';
          if(is_null($category->parent_id))
              $request->type="main";
-                return redirect()->route("admin.mainCategories.create",$request->type)->withInput($request->all())->with(['success' => 'تم اضافة القسم']);
+                return redirect()->route("admin.mainCategories",$request->type)->withInput($request->all())->with(['success' => 'تم اضافة القسم']);
 
 
 

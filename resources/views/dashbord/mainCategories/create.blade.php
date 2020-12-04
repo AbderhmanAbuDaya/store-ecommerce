@@ -103,7 +103,7 @@
                                                                     <label for="">  القسم الرئيسي </label>
                                                                     <select class="form-control form-control-sm" name="parent_id">
                                                                         <option value="{{null}}"></option>
-                                                                        @foreach($categories as $category)
+                                                                    @foreach($categories as $category)
                                                                         <option value="{{$category->id}}">{{$category->name}}</option>
                                                                         @endforeach
                                                                     </select>

@@ -56,5 +56,19 @@ class Product extends Model
     public function categories(){
         return $this->belongsToMany('App\Models\Category','categories_products','product_id','category_id','id','id');
     }
+    public function images(){
+        return $this->hasMany('App\Models\Image','product_id','id');
+    }
+    public function options(){
+        return $this->hasMany('App\Models\Option','product _id','id');
+    }
+
+    public function getIsActiveAttribute($val){
+        return $val==1?'active':'not active';
+    }
+    public function scopeActive($query){
+        return $query->where('is_active',1);
+    }
+
 
 }

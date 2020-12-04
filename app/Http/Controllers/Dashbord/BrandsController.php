@@ -15,7 +15,7 @@ use DB;
 class BrandsController extends Controller
 {
   public function index(){
-      $brands=Brand::orderBy('id','desc')->paginate(PAGENIATE_COUNT)->makeVisible('translations');
+      $brands=Brand::orderBy('id','desc')->paginate(PAGENIATE_COUNT);
       return view('dashbord.brands.index',compact('brands'));
   }
   public function create(){
@@ -141,7 +141,11 @@ class BrandsController extends Controller
 
                 $fileName=uploadImage('brands',$request->photo);
             }
-            $brand=Brand::create($request->except(['_token','photo']));
+
+            $brand=Brand::create([
+                'photo'=>$fileName,
+                'is_active'=>$request->is_active
+            ]);
 
             $brand->photo=$fileName;
         $brand->name=$request->name;

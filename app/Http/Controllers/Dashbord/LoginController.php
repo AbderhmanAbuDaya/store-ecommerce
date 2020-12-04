@@ -10,7 +10,7 @@ class LoginController extends Controller
     public function getLogin(){
         return view('Dashbord.auth.login');
     }
-    
+
     public function postLogin(AdminLoginRequest $request){
         $remember_me = $request->has('remember_me') ? true : false;
 
@@ -21,7 +21,7 @@ class LoginController extends Controller
        // notify()->error('خطا في البيانات  برجاء المجاولة مجدا ');
         return redirect()->back()->with(['error' => 'هناك خطا بالبيانات']);
        // return back()->withInput($request->only('email'));
-        
+
 
     }
     public function logout(Request $request)

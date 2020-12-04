@@ -29,3 +29,7 @@ Route::get('search/{search}', function ($search) {
 })->where('search', '[1-3]');
 
 
+
+
+Route::get('/home', 'HomeController@index')->name('home');
+Auth::routes();
