@@ -2,8 +2,11 @@
 
 namespace App\Providers;
 
+use App\Support\Storage\Contracts\StorageInterface;
+use App\Support\Storage\SessionStorage;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
-
+use Illuminate\Support\Facades\Schema;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -13,7 +16,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        Schema::defaultStringLength(191);
+
+        $this->app->bind(StorageInterface::class, function ($app) {
+            return new SessionStorage('basket'.Auth::id());
+        });
     }
 
     /**
@@ -23,6 +30,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Schema::defaultStringLength(191);
+
     }
 }
