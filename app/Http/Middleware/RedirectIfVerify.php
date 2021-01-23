@@ -20,6 +20,7 @@ class RedirectIfVerify
     {
 
         if (Auth::guard($guard)->check()) {
+            if (Auth::user()->email_verified_at)
             return redirect(RouteServiceProvider::PROFILE);
         }
 

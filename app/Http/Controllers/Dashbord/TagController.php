@@ -99,13 +99,13 @@ class TagController extends Controller
 
         $tag->save();
 
-        return redirect()->route("admin.tags.create")->withInput($request->all())->with(['success' => 'تم اضافة الماركة']);
+        return redirect()->route("admin.tags")->withInput($request->all())->with(['success' => 'تم اضافة الماركة']);
 
 
 
 
         DB::rollback();
-        return redirect()->route('admin.brands.create')->with(['error' => 'حاول مرة اخرى']);
+        return redirect()->route('admin.tags')->with(['error' => 'حاول مرة اخرى']);
 
     }
 

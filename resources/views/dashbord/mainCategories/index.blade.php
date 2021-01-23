@@ -1,7 +1,7 @@
 @extends('layouts.admin')
-@section('title')
-    AllMainCategories
-@stop
+@section('title',__('admin/category.All'.$type.'Categories'))
+
+
 
 @section('content')
 
@@ -9,13 +9,13 @@
         <div class="content-wrapper">
             <div class="content-header row">
                 <div class="content-header-left col-md-6 col-12 mb-2">
-                    <h3 class="content-header-title"> الاقسام الرئيسية </h3>
+                    <h3 class="content-header-title"> {{__('admin/category.'.$type.'Categories')}} </h3>
                     <div class="row breadcrumbs-top">
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">الرئيسية</a>
+                                <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">{{__('admin/category.home')}}</a>
                                 </li>
-                                <li class="breadcrumb-item active"> الاقسام الرئيسية
+                                <li class="breadcrumb-item active">  {{__('admin/category.'.$type.'Categories')}}
                                 </li>
                             </ol>
                         </div>
@@ -29,7 +29,7 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">جميع الاقسام الرئيسية </h4>
+                                    <h4 class="card-title">{{__('admin/category.All'.$type.'Categories')}}</h4>
                                     <a class="heading-elements-toggle"><i
                                             class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
@@ -52,15 +52,15 @@
                                             <thead class="">
                                             <tr>
                                                 <?php $i=0;?>
-                                                <th>count</th>
-                                                <th>الاسم </th>
-                                                <th>اسم برابط</th>
-                                                <th> صورة القسم</th>
-                                                <th>الحالة</th>
+                                                <th>{{__('admin/category.count')}}</th>
+                                                <th>{{__('admin/category.name')}} </th>
+                                                <th>{{__('admin/category.slug name')}}</th>
+                                                <th> {{__('admin/category.image')}}</th>
+                                                <th>{{__('admin/category.state')}}</th>
                                                  @if($type=='sub')
-                                                <th> القسم الرئيسي</th>
+                                                <th> {{__('admin/category.main category')}}</th>
                                                     @endif
-                                                <th>الإجراءات</th>
+                                                <th>{{__('admin/category.operations')}}</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -84,19 +84,19 @@
                                                             <div class="btn-group" role="group"
                                                                  aria-label="Basic example">
                                                                 <a href="{{route('admin.mainCategories.edit',[$category->id,$type])}}"
-                                                                   class="btn btn-outline-primary  box-shadow-3 mr-1 mb-1">تعديل</a>
+                                                                   class="btn btn-outline-primary  box-shadow-3 mr-1 mb-1">{{__('admin/category.update')}}</a>
 
 
                                                                 <a href="" id="" id_category="{{$category->id}}"
-                                                                   class="btn btn-outline-danger  box-shadow-3 mr-1 mb-1 deleteButton">حذف</a>
+                                                                   class="btn btn-outline-danger  box-shadow-3 mr-1 mb-1 deleteButton">{{__('admin/category.delete')}}</a>
 
 
                                                                 <a href="" id="button{{$category->id}}"   id_category="{{$category->id}}"
                                                                    class="btn btn-outline-warning btn-min-width box-shadow-3 mr-1 mb-1 changeButton">
                                                                     @if($category -> is_active == 'not active')
-                                                                        تفعيل
+                                                                        {{__('admin/category.activation')}}
                                                                     @else
-                                                                        الغاء تفعيل
+                                                                        {{__('admin/category.deactivation')}}
                                                                     @endif
                                                                 </a>
 

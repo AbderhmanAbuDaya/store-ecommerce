@@ -77,7 +77,7 @@ class MainCategoriesController extends Controller
           'status'=>true,
           'success'=>'تم التعديل',
           'id'=>$request->id_category,
-          'msg'=>($category->is_active=='active')?'الغاء تفعيل':'تفعيل',
+          'msg'=>($category->is_active=='active')?__('admin/category.deactivation'):__('admin/category.activation'),
           'msgstatus'=>$category->is_active,
 
       ]);
@@ -101,7 +101,7 @@ class MainCategoriesController extends Controller
 
 
 
-    public function update(MainCategotyRequest $request ,$id_category){
+    public function update(MainCategotyRequest $request,$id_category){
         try {
             $category=Category::find($id_category);
             if(empty($category)):
@@ -118,13 +118,13 @@ class MainCategoriesController extends Controller
                 if($category->save()):
                     DB::commit();
 
-                    return redirect()->back()->with(['success'=>'تم تعديل العرض']) ;
+                    return redirect()->route('admin.mainCategories',$request->type)->with(['success'=>'تم تعديل العرض']) ;
                 endif;
 
             endif;
 
         }catch (Exception $ex){
-            return redirect()->route('admin.mainCategories')->with(['error'=>'حاول مرة اخرى']);
+            return redirect()->route('admin.mainCategories',$request->type)->with(['error'=>'حاول مرة اخرى']);
         }
 
     }

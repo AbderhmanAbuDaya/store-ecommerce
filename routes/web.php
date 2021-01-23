@@ -33,3 +33,8 @@ Route::get('search/{search}', function ($search) {
 
 Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
+
+
+Route::get('/test/env', function () {
+    dd(env('DB_DATABASE')); // dump db variable value one by one
+});

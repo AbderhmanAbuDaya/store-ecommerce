@@ -9,13 +9,13 @@
         <div class="content-wrapper">
             <div class="content-header row">
                 <div class="content-header-left col-md-6 col-12 mb-2">
-                    <h3 class="content-header-title"> الاشارات </h3>
+                    <h3 class="content-header-title"> {{__('admin/tag.tags')}} </h3>
                     <div class="row breadcrumbs-top">
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">الرئيسية</a>
+                                <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">{{__('admin/tag.home')}}</a>
                                 </li>
-                                <li class="breadcrumb-item active">   الاشارات
+                                <li class="breadcrumb-item active">    {{__('admin/tag.tags')}}
                                 </li>
                             </ol>
                         </div>
@@ -29,7 +29,7 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">جميع الاشارات   </h4>
+                                    <h4 class="card-title">   {{__('admin/tag.all tags')}} </h4>
                                     <a class="heading-elements-toggle"><i
                                             class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
@@ -52,10 +52,10 @@
                                             <thead class="">
                                             <tr>
                                                 <?php $i=0;?>
-                                                <th>count</th>
-                                                <th>الاسم </th>
-                                                <th>الاسم بالرابط</th>
-                                                <th>الإجراءات</th>
+                                                <th>{{__('admin/tag.count')}}</th>
+                                                <th>{{__('admin/tag.name')}}</th>
+                                                <th>{{__('admin/tag.slug name')}}</th>
+                                                <th>{{__('admin/tag.operations')}}</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -70,11 +70,11 @@
                                                             <div class="btn-group" role="group"
                                                                  aria-label="Basic example">
                                                                 <a href="{{route('admin.tags.edit',$tag->id)}}"
-                                                                   class="btn btn-outline-primary  box-shadow-3 mr-1 mb-1">تعديل</a>
+                                                                   class="btn btn-outline-primary  box-shadow-3 mr-1 mb-1">{{__('admin/tag.update')}}</a>
 
 
                                                                 <a href="" id="" id_tag="{{$tag->id}}"
-                                                                   class="btn btn-outline-danger  box-shadow-3 mr-1 mb-1 deleteButton">حذف</a>
+                                                                   class="btn btn-outline-danger  box-shadow-3 mr-1 mb-1 deleteButton">{{__('admin/tag.delete')}}</a>
 
 
                                                             </div>

@@ -15,5 +15,12 @@ return [
 
     'failed' => 'These credentials do not match our records.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
+    'login'=>'الدخول',
+    'login to dashboard'=>'الدخول للوحة التحكم ',
+    'enter email'=>'أدخل البريد الالكتروني ',
+    'enter password'=>'أدخل كلمة المرور',
+    'remember login'=>'تذكر دخولي',
+
+
 
 ];

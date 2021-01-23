@@ -28,7 +28,7 @@ class MainCategotyRequest extends FormRequest
     {
         return [
         'name'=>'required',
-            'parentID'=>'required|in:1,2',
+        //    'parentID'=>'required|in:1,2',
             'slug'=>'required|unique:categories,slug,'.$this->id,
            // 'name'=> 'required|unique:'
             'parent_id'=>[new SubOrMainCategory($this->parentId,$this->id)]

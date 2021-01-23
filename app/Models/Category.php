@@ -34,12 +34,15 @@ class Category extends Model
     public function getIsActiveAttribute($val){
         return $val==1?'active':'not active';
     }
+    public function getState($val){
+        return $val==1?__('admin/category.active'):__('admin/category.not active');
+    }
 
      public function scopeList($q,$id){
         return $this->where('parent_id','like',$id);
      }
     public function products(){
-        return $this->belongsToMany('App\Models\Product','categories_products','categories_id','product_id','id','id');
+        return $this->belongsToMany('App\Models\Product','categories_products','category_id','product_id','id','id')->with('images');
     }
     public function scopeActive($query){
         return $query->where('is_active',1);

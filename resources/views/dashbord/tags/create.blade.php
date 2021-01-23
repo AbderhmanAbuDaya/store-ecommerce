@@ -9,11 +9,11 @@
                     <div class="row breadcrumbs-top">
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="">الرئيسية </a>
+                                <li class="breadcrumb-item"><a href="">{{__('admin/tag.home')}} </a>
                                 </li>
-                                <li class="breadcrumb-item"><a href="">  المركات التجارية </a>
+                                <li class="breadcrumb-item"><a href=""> {{__('admin/tag.tags')}} </a>
                                 </li>
-                                <li class="breadcrumb-item active">إضافة  اشارة
+                                <li class="breadcrumb-item active">{{__('admin/tag.add tag')}}
                                 </li>
                             </ol>
                         </div>
@@ -27,7 +27,7 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title" id="basic-layout-form"> إضافة  اشارة </h4>
+                                    <h4 class="card-title" id="basic-layout-form">   {{__('admin/tag.add tag')}} </h4>
                                     <a class="heading-elements-toggle"><i
                                             class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
@@ -51,7 +51,7 @@
 
                                             <div class="form-body">
 
-                                                <h4 class="form-section"><i class="ft-home"></i> بيانات الاشارة </h4>
+                                                <h4 class="form-section"><i class="ft-home"></i>  </h4>
 
 
                                                         <div class="row">

@@ -69,6 +69,31 @@ class Product extends Model
     public function scopeActive($query){
         return $query->where('is_active',1);
     }
+    public function wishProduct(){
 
+        return auth()->user()->wishlistHas($this->id);
+    }
+
+    public function hasStock($quantity)
+    {
+        return $this->qty >= $quantity;
+    }
+
+    public function outOfStock()
+    {
+        return $this->qty === 0;
+    }
+
+    public function inStock()
+    {
+        return $this->qty >= 1;
+    }
+
+
+    public function getTotal($converted = true)
+    {
+        return $total =  $this->special_price ?? $this -> price;
+
+    }
 
 }

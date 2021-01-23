@@ -19,6 +19,28 @@ return [
     'Local delivery'=>'توصيل محلي ',
     'Outer delivery'=>'توصيل خارجي ',
     'logout'=>'تسجيل الخروج',
-    'Languages'=>'الغات'
+    'Languages'=>'الغات',
+    'home'=>'الرئيسية',
+    'main category'=>'الاقسام الرئيسيه ',
+    'show all'=>'عرض الكل',
+    'add main category'=>'أضافة قسم جديد ',
+    'sub category'=>'الاقسام الفرعية   ',
+    'add sub category'=>'اضافة قسم فرعي جديد',
+    'products'=>'المنتجات',
+    'add product'=>'أضافة منتج جديد ',
+    'product attribute'=>'خصائص المنتج',
+    'add product attribute'=>'اضافة خصائص المنتج',
+    'value product attribute'=>'قيمة خصائص المنتج',
+    'add value product attribute'=>'اضافة قيم خصائص المنتج',
+    'commercial brands'=>'الماركات التجارية',
+    'add commercial brand'=>'ضافة ماركة تجارية',
+    'tags'=>'العلامات التجارية',
+    'add tag'=>'اضافة علامة تجارية',
+    'main slider'=>'الاسليدر',
+    'image slider'=>'صور الاسليدر ',
+
+
+
+
 
 ];
